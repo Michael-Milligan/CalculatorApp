@@ -25,63 +25,45 @@ namespace Calculator
             InitializeComponent();
         }
 
-
+        bool IsError;
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void ButtonDigit_Click(object sender, RoutedEventArgs e)
         {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 1;
+            //Retrieving button from sender
+            Button button = sender as Button;
+            //Exception catching
+            try
+            {
+                checked
+                {
+                    Field.Content = Convert.ToInt64(Field.Content) * 10 +
+                    (button.Name[6] - '0');
+                }
+            }
+            catch (OverflowException)
+            {
+                Field.Content = "Error";
+                IsError = true;
+            }
+            catch(Exception)
+            {
+                ErrorHandling();
+            }
+            
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        void ErrorHandling()
         {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 2;
+            Field.Content = 0;
+            IsError = false;
         }
 
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 3;
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 4;
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 5;
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 6;
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 7;
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 8;
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10 + 9;
-        }
-
-        private void Button0_Click(object sender, RoutedEventArgs e)
-        {
-            Field.Content = Convert.ToInt64(Field.Content) * 10;
-        }
-
+        #region Actions
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
 
@@ -100,6 +82,18 @@ namespace Calculator
         private void ButtonSub_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        #endregion
+        
+
+        private void BackSpace_Click(object sender, RoutedEventArgs e)
+        {
+            if(!IsError)
+            Field.Content = Convert.ToInt64(Field.Content) / 10;
+            else
+            {
+                ErrorHandling();
+            }
         }
     }
 }
