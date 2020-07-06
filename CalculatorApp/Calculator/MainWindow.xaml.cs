@@ -26,6 +26,7 @@ namespace Calculator
         }
 
         bool IsError;
+        long Memory;
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -94,6 +95,34 @@ namespace Calculator
             {
                 ErrorHandling();
             }
+        }
+
+        #region Memory
+        private void MPlus_Click(object sender, RoutedEventArgs e)
+        {
+            Memory += Convert.ToInt64(Field.Content);
+        }
+
+        private void MMinus_Click(object sender, RoutedEventArgs e)
+        {
+            Memory -= Convert.ToInt64(Field.Content);
+        }
+
+        private void MReset_Click(object sender, RoutedEventArgs e)
+        {
+            Field.Content = Memory;
+        }
+
+        #endregion
+
+        private void OppositeSign_Click(object sender, RoutedEventArgs e)
+        {
+            Field.Content = Convert.ToInt64(Field.Content) * (-1);
+        }
+
+        private void Dot_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

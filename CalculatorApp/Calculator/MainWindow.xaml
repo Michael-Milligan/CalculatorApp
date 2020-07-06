@@ -28,7 +28,13 @@
         <Label Background="AliceBlue" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="0" Name="Answer"></Label>
         <Label Grid.Row="1" Grid.ColumnSpan="5" Name="Field">0</Label>
 
+        <Button Name="OppositeSign" Grid.Row="6" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
+        <Button Name="Dot" Grid.Row="6" Grid.Column="2" Click="Dot_Click">.</Button>
+
         <Button Name="BackSpace" Grid.Column="0" Grid.Row="2" Click="BackSpace_Click">&lt;-</Button>
+        <Button Name="MPlus" Grid.Column="1" Grid.Row="2" Click="MPlus_Click">M+</Button>
+        <Button Name="MMinus" Grid.Column="2" Grid.Row="2" Click="MMinus_Click">M-</Button>
+        <Button Name="MReset" Grid.Column="3" Grid.Row="2" Click="MReset_Click">Mrc</Button>
 
         <Button Grid.Column="0" Grid.Row="3" Name="Button1" Click="ButtonDigit_Click">1</Button>
         <Button Grid.Column="1" Grid.Row="3" Name="Button2" Click="ButtonDigit_Click">2</Button>
