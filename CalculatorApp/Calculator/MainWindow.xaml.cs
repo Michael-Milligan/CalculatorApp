@@ -30,8 +30,6 @@ namespace Calculator
         int ZeroCount = 1;
         bool IsAfterDot;
 
-        double FirstOperand;
-        double SecondOperand;
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -43,8 +41,14 @@ namespace Calculator
             //Retrieving button from sender
             Button button = sender as Button;
 
+            if (Answer.Content != null && Sign.Content == null)
+            {
+                Answer.Content = null;
+                return;
+            }
+
             //If the Field is overflown this will handle the infinity
-            if ((string)Field.Content == "∞")
+            if (Convert.ToString(Field.Content) == "∞")
             {
                 ErrorHandling();
                 return;
@@ -85,28 +89,78 @@ namespace Calculator
         #region Actions
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Answer.Content == null)
+            {
+                Sign.Content = "+";
+                Answer.Content = Field.Content;
+                Field.Content = 0;
+            }
+            else
+            {
+                Answer.Content = Convert.ToDouble(Answer.Content)
+                    + Convert.ToDouble(Field.Content);
+                Field.Content = 0;
+            }
         }
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Answer.Content == null)
+            {
+                Sign.Content = "-";
+                Answer.Content = Field.Content;
+                Field.Content = 0;
+            }
+            else
+            {
+                Answer.Content = Convert.ToDouble(Answer.Content)
+                    - Convert.ToDouble(Field.Content);
+                Field.Content = 0;
+            }
         }
 
         private void ButtonMulti_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Answer.Content == null)
+            {
+                Sign.Content = "*";
+                Answer.Content = Field.Content;
+                Field.Content = 0;
+            }
+            else
+            {
+                Answer.Content = Convert.ToDouble(Answer.Content)
+                    * Convert.ToDouble(Field.Content);
+                Field.Content = 0;
+            }
         }
 
         private void ButtonSub_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Answer.Content == null)
+            {
+                Sign.Content = "/";
+                Answer.Content = Field.Content;
+                Field.Content = 0;
+            }
+            else
+            {
+                Answer.Content = Convert.ToDouble(Answer.Content)
+                    / Convert.ToDouble(Field.Content);
+                Field.Content = 0;
+            }
         }
         #endregion
 
 
         private void BackSpace_Click(object sender, RoutedEventArgs e)
         {
+            if (Answer.Content != null && Sign.Content == null)
+            {
+                Answer.Content = null;
+                return;
+            }
+
             if (IsError) 
             { 
                 ErrorHandling();
@@ -155,6 +209,41 @@ namespace Calculator
         private void Dot_Click(object sender, RoutedEventArgs e)
         {
             IsAfterDot = true;
+        }
+
+        private void C_Click(object sender, RoutedEventArgs e)
+        {
+            Field.Content = 0;
+            Answer.Content = null;
+        }
+
+        private void CE_Click(object sender, RoutedEventArgs e)
+        {
+            Field.Content = 0;
+        }
+
+        private void Equals_Click(object sender, RoutedEventArgs e)
+        {
+            Answer.Content = GetResult(Convert.ToDouble(Answer.Content),
+                Convert.ToDouble(Field.Content));
+            Field.Content = 0;
+            Sign.Content = null;
+        }
+
+        double GetResult(double FirstOperand, double SecondOperand)
+        {
+            switch (Convert.ToString(Sign.Content)[0])
+            {
+                case '+':
+                    return FirstOperand + SecondOperand;
+                case '-': 
+                    return FirstOperand - SecondOperand;
+                case '*': 
+                    return FirstOperand * SecondOperand;
+                case '/': 
+                    return FirstOperand / SecondOperand;
+            }
+            return 0;
         }
     }
 }
