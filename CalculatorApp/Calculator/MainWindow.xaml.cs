@@ -30,6 +30,9 @@ namespace Calculator
         int ZeroCount = 1;
         bool IsAfterDot;
 
+        double FirstOperand;
+        double SecondOperand;
+
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -39,32 +42,38 @@ namespace Calculator
         {
             //Retrieving button from sender
             Button button = sender as Button;
-            //Exception catching
+
+            //If the Field is overflown this will handle the infinity
+            if ((string)Field.Content == "∞")
+            {
+                ErrorHandling();
+                return;
+            }
+
             if (!IsAfterDot)
             {
-                try
-                {
-                    checked
-                    {
-                        Field.Content = Convert.ToDouble(Field.Content) * 10 +
+                Field.Content = Convert.ToDouble(Field.Content) * 10 +
                         (button.Name[6] - '0');
-                    }
-                }
-                catch (OverflowException)
-                {
-                    Field.Content = "Error";
-                    IsError = true;
-                }
-                catch (Exception)
-                {
-                    ErrorHandling();
-                }
             }
             else
             {
-                Field.Content = Convert.ToDouble(Field.Content) +
-                        (button.Name[6] - '0') * Math.Pow(0.1, ZeroCount++);
+                try
+                {
+                    //Rounding the double result to avoid "zero-trouble" (1*)
+                    Field.Content = Math.Round(Convert.ToDouble(Field.Content) +
+                            (button.Name[6] - '0') * Math.Pow(0.1, ZeroCount++), ZeroCount);
+                }
+                catch (Exception)
+                {
+                    GetError();
+                }
             }
+        }
+
+        void GetError()
+        {
+            Field.Content = "Error";
+            IsError = true;
         }
 
         void ErrorHandling()
@@ -94,24 +103,24 @@ namespace Calculator
 
         }
         #endregion
-        
+
 
         private void BackSpace_Click(object sender, RoutedEventArgs e)
-        { 
-            if(!IsError)
-            {
-                char[] temp = (Field.Content as string).ToCharArray();
-                char[] Result = new char[temp.Length - 1];
-                for (int i = 0; i < Result.Length; ++i)
-                {
-                    Result[i] = temp[i];
-                }
-                Field.Content = Convert.ToString(Result);
-            }
-            else
-            {
+        {
+            if (IsError) 
+            { 
                 ErrorHandling();
+                return;
             }
+            //Transfer Content to the char array
+            char[] temp = (Field.Content as string).ToCharArray();
+            //Copying all except for one to result
+            char[] Result = new char[temp.Length - 1];
+            for (int i = 0; i < Result.Length; ++i)
+            {
+                Result[i] = temp[i];
+            }
+            Field.Content = Convert.ToString(Result);
         }
 
         #region Memory
@@ -133,7 +142,14 @@ namespace Calculator
 
         private void OppositeSign_Click(object sender, RoutedEventArgs e)
         {
-            Field.Content = Convert.ToDouble(Field.Content) * (-1);
+            try
+            {
+                Field.Content = Convert.ToDouble(Field.Content) * (-1);
+            }
+            catch (Exception)
+            {
+                ErrorHandling();
+            }
         }
 
         private void Dot_Click(object sender, RoutedEventArgs e)

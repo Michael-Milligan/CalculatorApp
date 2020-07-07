@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4478A8E8-AE75-4BF2-9969-D62AD4ADF0DE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Calculator</RootNamespace>
     <AssemblyName>Calculator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
