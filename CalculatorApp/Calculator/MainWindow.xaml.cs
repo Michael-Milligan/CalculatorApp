@@ -95,11 +95,15 @@ namespace Calculator
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
+            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
+            {
+                Answer.Content = GetResult(Convert.ToDouble(Answer.Content),Convert.ToDouble(Field.Content));
+                Field.Content = 0;
+                Sign.Content = "+";
+            }
             else
             {
-                Answer.Content = Convert.ToDouble(Answer.Content)
-                    + Convert.ToDouble(Field.Content);
-                Field.Content = 0;
+                Sign.Content = "+";
             }
         }
 
@@ -111,11 +115,15 @@ namespace Calculator
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
+            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
+            {
+                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
+                Field.Content = 0;
+                Sign.Content = "-";
+            }
             else
             {
-                Answer.Content = Convert.ToDouble(Answer.Content)
-                    - Convert.ToDouble(Field.Content);
-                Field.Content = 0;
+                Sign.Content = "-";
             }
         }
 
@@ -127,11 +135,15 @@ namespace Calculator
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
+            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
+            {
+                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
+                Field.Content = 0;
+                Sign.Content = "*";
+            }
             else
             {
-                Answer.Content = Convert.ToDouble(Answer.Content)
-                    * Convert.ToDouble(Field.Content);
-                Field.Content = 0;
+                Sign.Content = "*";
             }
         }
 
@@ -143,11 +155,15 @@ namespace Calculator
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
+            else if(Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
+            {
+                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
+                Field.Content = 0;
+                Sign.Content = "/";
+            }
             else
             {
-                Answer.Content = Convert.ToDouble(Answer.Content)
-                    / Convert.ToDouble(Field.Content);
-                Field.Content = 0;
+                Sign.Content = "/";
             }
         }
         #endregion
