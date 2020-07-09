@@ -11,9 +11,11 @@
             <MenuItem Header="Actions">
                 <MenuItem Name="Exit" Header="Exit" Click="Exit_Click"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Type">
+            <MenuItem Header="Mode">
                 <MenuItem Name="Standard" Header="Standard" Click="Standard_Click" 
                           ToolTip="This type contains only basic operations with numbers"></MenuItem>
+                <MenuItem Name="_Scientific" Header="Scientific" Click="Scientific_Click" 
+                          ToolTip="This type contains advanced operations with numbers"></MenuItem>
             </MenuItem>
             <MenuItem Header="Languages" >
 
@@ -81,8 +83,13 @@
                     Tag="*">*</Button>
             <Button Grid.Column="3" Grid.Row="7" Name="ButtonSub" Click="Action_Click"
                     Tag="/">/</Button>
+            <Button Name="ButtonDegree" Grid.Column="4" Grid.Row="3" Click="Action_Click"
+                    Tag="^">^</Button>
+            <Button Name="ButtonSqrtParameters" Grid.Column="4" Grid.Row="4" Click="Action_Click"
+                    Tag="x√y">x√y</Button>
+            
             <Button Name="Equals" Grid.Row="3" Grid.Column="3" Click="Equals_Click">=</Button>
-
+            
             <!--Scientific Actions-->
             
             

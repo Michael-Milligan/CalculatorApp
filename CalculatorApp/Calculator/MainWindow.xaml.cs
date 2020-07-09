@@ -205,5 +205,13 @@ namespace Calculator
         {
             Application.Current.Windows[0].Content = new MainWindow().Content;
         }
+
+        private void Scientific_Click(object sender, RoutedEventArgs e)
+        {
+            Window Current = Application.Current.Windows[0];
+            Current.Height = 450;
+            Current.Width = 450;
+            Current.Content = new Scientific().Content;
+        }
     }
 }
