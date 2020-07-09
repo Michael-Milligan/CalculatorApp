@@ -27,3 +27,4 @@ D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculato
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.exe
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.pdb
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.g.cs

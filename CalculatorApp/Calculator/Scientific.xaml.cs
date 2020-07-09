@@ -10,17 +10,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Calculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class Scientific : Window
     {
-        public MainWindow()
+        public Scientific()
         {
             InitializeComponent();
         }
@@ -97,7 +93,7 @@ namespace Calculator
             }
             else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
             {
-                Answer.Content = GetResult(Convert.ToDouble(Answer.Content),Convert.ToDouble(Field.Content));
+                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
                 Field.Content = 0;
                 Sign.Content = "+";
             }
@@ -155,7 +151,7 @@ namespace Calculator
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
-            else if(Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
+            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
             {
                 Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
                 Field.Content = 0;
@@ -177,8 +173,8 @@ namespace Calculator
                 return;
             }
 
-            if (IsError) 
-            { 
+            if (IsError)
+            {
                 ErrorHandling();
                 return;
             }
@@ -253,11 +249,11 @@ namespace Calculator
             {
                 case '+':
                     return FirstOperand + SecondOperand;
-                case '-': 
+                case '-':
                     return FirstOperand - SecondOperand;
-                case '*': 
+                case '*':
                     return FirstOperand * SecondOperand;
-                case '/': 
+                case '/':
                     return FirstOperand / SecondOperand;
             }
             return 0;
