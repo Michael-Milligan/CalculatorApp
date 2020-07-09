@@ -82,12 +82,12 @@ namespace Calculator
             IsError = false;
         }
 
-        #region Actions
-        private void ButtonPlus_Click(object sender, RoutedEventArgs e)
+        private void Action_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
             if (Answer.Content == null)
             {
-                Sign.Content = "+";
+                Sign.Content = button.Tag;
                 Answer.Content = Field.Content;
                 Field.Content = 0;
             }
@@ -95,74 +95,13 @@ namespace Calculator
             {
                 Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
                 Field.Content = 0;
-                Sign.Content = "+";
+                Sign.Content = button.Tag;
             }
             else
             {
-                Sign.Content = "+";
+                Sign.Content = button.Tag;
             }
         }
-
-        private void ButtonMinus_Click(object sender, RoutedEventArgs e)
-        {
-            if (Answer.Content == null)
-            {
-                Sign.Content = "-";
-                Answer.Content = Field.Content;
-                Field.Content = 0;
-            }
-            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
-            {
-                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
-                Field.Content = 0;
-                Sign.Content = "-";
-            }
-            else
-            {
-                Sign.Content = "-";
-            }
-        }
-
-        private void ButtonMulti_Click(object sender, RoutedEventArgs e)
-        {
-            if (Answer.Content == null)
-            {
-                Sign.Content = "*";
-                Answer.Content = Field.Content;
-                Field.Content = 0;
-            }
-            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
-            {
-                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
-                Field.Content = 0;
-                Sign.Content = "*";
-            }
-            else
-            {
-                Sign.Content = "*";
-            }
-        }
-
-        private void ButtonSub_Click(object sender, RoutedEventArgs e)
-        {
-            if (Answer.Content == null)
-            {
-                Sign.Content = "/";
-                Answer.Content = Field.Content;
-                Field.Content = 0;
-            }
-            else if (Answer.Content != null && Convert.ToDouble(Field.Content) != 0)
-            {
-                Answer.Content = GetResult(Convert.ToDouble(Answer.Content), Convert.ToDouble(Field.Content));
-                Field.Content = 0;
-                Sign.Content = "/";
-            }
-            else
-            {
-                Sign.Content = "/";
-            }
-        }
-        #endregion
 
 
         private void BackSpace_Click(object sender, RoutedEventArgs e)
