@@ -8,11 +8,15 @@
         Title="MainWindow" Height="300" Width="300">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Actions">
+                <MenuItem Name="Exit" Header="Exit" Click="Exit_Click"></MenuItem>
+            </MenuItem>
             <MenuItem Header="Type">
-                <MenuItem Header="Standard" ></MenuItem>
+                <MenuItem Name="Standard" Header="Standard" Click="Standard_Click"></MenuItem>
              </MenuItem>
-            <MenuItem Header="Actions" ></MenuItem>
-            <MenuItem Header="Languages" ></MenuItem>
+            <MenuItem Header="Languages" >
+                
+            </MenuItem>
         </Menu>
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
@@ -33,8 +37,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Name="Exit" Click="Exit_Click">Exit</Button>
-            <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0"></Label>
+            <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="3" Grid.Row="0"/>
             <Label Grid.Row="1" Grid.ColumnSpan="5" Name="Field">0</Label>
             <Label Name="Sign" 
                    HorizontalContentAlignment="Center" 

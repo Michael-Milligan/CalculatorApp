@@ -261,5 +261,10 @@ namespace Calculator
             }
             return 0;
         }
+
+        private void Standard_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Windows[0].Content = new MainWindow().Content;
+        }
     }
 }
