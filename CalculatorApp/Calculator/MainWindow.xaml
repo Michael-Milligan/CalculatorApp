@@ -6,58 +6,67 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75"></ColumnDefinition>
-            <ColumnDefinition Width="75"></ColumnDefinition>
-            <ColumnDefinition Width="75"></ColumnDefinition>
-            <ColumnDefinition Width="75"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Type">
+                <MenuItem Header="Standard" ></MenuItem>
+             </MenuItem>
+            <MenuItem Header="Actions" ></MenuItem>
+            <MenuItem Header="Languages" ></MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Name="Exit" Click="Exit_Click">Exit</Button>
-        <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0"></Label>
-        <Label Grid.Row="1" Grid.ColumnSpan="5" Name="Field">0</Label>
-        <Label Name="Sign" 
-               HorizontalContentAlignment="Center" 
-               Grid.Row="0" Grid.Column="3"></Label>
+            <Button Grid.Column="0" Grid.Row="0" Name="Exit" Click="Exit_Click">Exit</Button>
+            <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0"></Label>
+            <Label Grid.Row="1" Grid.ColumnSpan="5" Name="Field">0</Label>
+            <Label Name="Sign" 
+                   HorizontalContentAlignment="Center" 
+                   Grid.Row="0" Grid.Column="3"></Label>
 
-        <Button Name="OppositeSign" Grid.Row="7" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
-        <Button Name="Dot" Grid.Row="7" Grid.Column="2" Click="Dot_Click">.</Button>
+            <Button Name="OppositeSign" Grid.Row="7" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
+            <Button Name="Dot" Grid.Row="7" Grid.Column="2" Click="Dot_Click">.</Button>
 
-        <Button Name="BackSpace" Grid.Column="0" Grid.Row="2" Click="BackSpace_Click">&lt;-</Button>
-        <Button Name="MPlus" Grid.Row="3" Click="MPlus_Click">M+</Button>
-        <Button Name="MMinus" Grid.Column="1" Grid.Row="3" Click="MMinus_Click">M-</Button>
-        <Button Name="MReset" Grid.Column="2" Grid.Row="3" Click="MReset_Click">Mrc</Button>
+            <Button Name="BackSpace" Grid.Column="0" Grid.Row="2" Click="BackSpace_Click">&lt;-</Button>
+            <Button Name="MPlus" Grid.Row="3" Click="MPlus_Click">M+</Button>
+            <Button Name="MMinus" Grid.Column="1" Grid.Row="3" Click="MMinus_Click">M-</Button>
+            <Button Name="MReset" Grid.Column="2" Grid.Row="3" Click="MReset_Click">Mrc</Button>
 
-        <Button Grid.Column="0" Grid.Row="4" Name="Button1" Click="ButtonDigit_Click">1</Button>
-        <Button Grid.Column="1" Grid.Row="4" Name="Button2" Click="ButtonDigit_Click">2</Button>
-        <Button Grid.Column="2" Grid.Row="4" Name="Button3" Click="ButtonDigit_Click">3</Button>
-        <Button Grid.Column="0" Grid.Row="5" Name="Button4" Click="ButtonDigit_Click">4</Button>
-        <Button Grid.Column="1" Grid.Row="5" Name="Button5" Click="ButtonDigit_Click">5</Button>
-        <Button Grid.Column="2" Grid.Row="5" Name="Button6" Click="ButtonDigit_Click">6</Button>
-        <Button Grid.Column="0" Grid.Row="6" Name="Button7" Click="ButtonDigit_Click">7</Button>
-        <Button Grid.Column="1" Grid.Row="6" Name="Button8" Click="ButtonDigit_Click">8</Button>
-        <Button Grid.Column="2" Grid.Row="6" Name="Button9" Click="ButtonDigit_Click">9</Button>
-        <Button Grid.Column="1" Grid.Row="7" Name="Button0" Click="ButtonDigit_Click">0</Button>
+            <Button Grid.Column="0" Grid.Row="4" Name="Button1" Click="ButtonDigit_Click">1</Button>
+            <Button Grid.Column="1" Grid.Row="4" Name="Button2" Click="ButtonDigit_Click">2</Button>
+            <Button Grid.Column="2" Grid.Row="4" Name="Button3" Click="ButtonDigit_Click">3</Button>
+            <Button Grid.Column="0" Grid.Row="5" Name="Button4" Click="ButtonDigit_Click">4</Button>
+            <Button Grid.Column="1" Grid.Row="5" Name="Button5" Click="ButtonDigit_Click">5</Button>
+            <Button Grid.Column="2" Grid.Row="5" Name="Button6" Click="ButtonDigit_Click">6</Button>
+            <Button Grid.Column="0" Grid.Row="6" Name="Button7" Click="ButtonDigit_Click">7</Button>
+            <Button Grid.Column="1" Grid.Row="6" Name="Button8" Click="ButtonDigit_Click">8</Button>
+            <Button Grid.Column="2" Grid.Row="6" Name="Button9" Click="ButtonDigit_Click">9</Button>
+            <Button Grid.Column="1" Grid.Row="7" Name="Button0" Click="ButtonDigit_Click">0</Button>
 
-        <Button Grid.Column="3" Grid.Row="4" Name="ButtonPlus" Click="ButtonPlus_Click">+</Button>
-        <Button Grid.Column="3" Grid.Row="5" Name="ButtonMinus" Click="ButtonMinus_Click">-</Button>
-        <Button Grid.Column="3" Grid.Row="6" Name="ButtonMulti" Click="ButtonMulti_Click">*</Button>
-        <Button Grid.Column="3" Grid.Row="7" Name="ButtonSub" Click="ButtonSub_Click">/</Button>
+            <Button Grid.Column="3" Grid.Row="4" Name="ButtonPlus" Click="ButtonPlus_Click">+</Button>
+            <Button Grid.Column="3" Grid.Row="5" Name="ButtonMinus" Click="ButtonMinus_Click">-</Button>
+            <Button Grid.Column="3" Grid.Row="6" Name="ButtonMulti" Click="ButtonMulti_Click">*</Button>
+            <Button Grid.Column="3" Grid.Row="7" Name="ButtonSub" Click="ButtonSub_Click">/</Button>
 
-        <Button Name="C" Grid.Row="2" Grid.Column="1" Click="C_Click">C</Button>
-        <Button Name="CE" Grid.Row="2" Grid.Column="0" Click="CE_Click">CE</Button>
-        <Button Name="Equals" Grid.Row="3" Grid.Column="3" Click="Equals_Click">=</Button>
-    </Grid>
+            <Button Name="C" Grid.Row="2" Grid.Column="1" Click="C_Click">C</Button>
+            <Button Name="CE" Grid.Row="2" Grid.Column="0" Click="CE_Click">CE</Button>
+            <Button Name="Equals" Grid.Row="3" Grid.Column="3" Click="Equals_Click">=</Button>
+        </Grid>
+    </DockPanel>
 </Window>
