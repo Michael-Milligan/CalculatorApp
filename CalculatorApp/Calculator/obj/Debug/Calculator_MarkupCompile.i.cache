@@ -1,7 +1,7 @@
 ﻿Calculator
 
 
-winexe
+exe
 C#
 .cs
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\
@@ -12,9 +12,9 @@ DEBUG;TRACE
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\App.xaml
 21668571599
 
-7-568038935
+8-1300297371
 13152784993
 MainWindow.xaml;Scientific.xaml;
 
-False
+True
 

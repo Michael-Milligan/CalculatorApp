@@ -7,20 +7,7 @@
         mc:Ignorable="d"
         Title="Scientific" Height="450" Width="450">
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Actions">
-                <MenuItem Name="Exit" Header="Exit" Click="Exit_Click"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Mode">
-                <MenuItem Name="Standard" Header="Standard" Click="Standard_Click" 
-                          ToolTip="This type contains only basic operations with numbers"></MenuItem>
-                <MenuItem Name="_Scientific" Header="Scientific" Click="Scientific_Click" 
-                          ToolTip="This type contains advanced operations with numbers"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Languages" >
-
-            </MenuItem>
-        </Menu>
+        
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"></ColumnDefinition>
