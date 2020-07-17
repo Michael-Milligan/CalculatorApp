@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Scientific" Height="450" Width="450">
     <DockPanel>
-        
+        <local:AppMenu ID="2" DockPanel.Dock="Top"></local:AppMenu>
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"></ColumnDefinition>

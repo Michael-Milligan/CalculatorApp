@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
     <DockPanel>
-        <local:AppMenu DockPanel.Dock="Top" />
+        <local:AppMenu DockPanel.Dock="Top" ID ="1"></local:AppMenu>
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"></ColumnDefinition>

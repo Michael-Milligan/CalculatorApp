@@ -9,8 +9,10 @@ using System.Windows.Controls;
 
 namespace Calculator
 {
-    class AppMenu : Menu
+    public class AppMenu : Menu
     {
+        public int ID { get; set; }
+
         public AppMenu()
         {
             MenuItem Actions = new MenuItem();
@@ -34,7 +36,7 @@ namespace Calculator
 
             MenuItem Language = new MenuItem();
 
-            Items.Add(Exit);
+            Items.Add(Actions);
             Items.Add(Mode);
             Items.Add(Language);
         }

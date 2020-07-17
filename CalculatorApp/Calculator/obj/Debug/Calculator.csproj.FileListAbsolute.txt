@@ -30,3 +30,6 @@ D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculato
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.g.cs
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.baml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.g.cs
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.baml
