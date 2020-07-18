@@ -115,7 +115,7 @@
                     <!--To add the button correctly you need:
                         1) Modify the GetResult()
                         2) Add tag which contains ONLY its sign in GetResult()
-                        3) Connect Action_Click(...) as EventHandler-->
+                        3) Connect Action_Click(...) as EventHandler--> 
                     <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Click="Action_Click">y√x</Button>
                 </Grid>
             </TabItem>
