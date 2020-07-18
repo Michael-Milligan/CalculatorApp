@@ -187,31 +187,28 @@ namespace Calculator
 
         double GetResult(double FirstOperand, double SecondOperand)
         {
-            switch (Convert.ToString(Sign.Content)[0])
+            switch (Convert.ToString(Sign.Content))
             {
-                case '+':
+                case "+":
                     return FirstOperand + SecondOperand;
-                case '-': 
+                case "-": 
                     return FirstOperand - SecondOperand;
-                case '*': 
+                case "*": 
                     return FirstOperand * SecondOperand;
-                case '/': 
+                case "/": 
                     return FirstOperand / SecondOperand;
+                case "^":
+                    return Math.Pow(FirstOperand, SecondOperand);
+                case "y√x":
+                    try
+                    {
+                        return Math.Pow(FirstOperand, 1 / SecondOperand);
+                    }
+                    catch (Exception)
+                    { GetError(); }
+                    break;
             }
             return 0;
-        }
-
-        private void Standard_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Windows[0].Content = new MainWindow().Content;
-        }
-
-        private void Scientific_Click(object sender, RoutedEventArgs e)
-        {
-            Window Current = Application.Current.Windows[0];
-            Current.Height = 450;
-            Current.Width = 450;
-            Current.Content = new Scientific().Content;
         }
     }
 }

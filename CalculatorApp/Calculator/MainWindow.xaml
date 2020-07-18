@@ -7,9 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
     <DockPanel>
-        <local:AppMenu DockPanel.Dock="Top" ID ="1"></local:AppMenu>
-        <Grid DockPanel.Dock="Bottom">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Actions">
+                <MenuItem Header="Exit" Click="Exit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Languages">
+                
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"></ColumnDefinition>
                 <ColumnDefinition Width="75"></ColumnDefinition>
                 <ColumnDefinition Width="75"></ColumnDefinition>
                 <ColumnDefinition Width="75"></ColumnDefinition>
@@ -17,65 +25,101 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="3" Grid.Row="0"/>
-            <Label Grid.Row="1" Grid.ColumnSpan="5" Name="Field">0</Label>
+            <Label Grid.Row="1" Grid.ColumnSpan="4" Name="Field">0</Label>
             <Label Name="Sign" 
                    HorizontalContentAlignment="Center" 
-                   Grid.Row="0" Grid.Column="3"></Label>
-
-            <!--Auxiliary Buttons-->
-            <Button Name="OppositeSign" Grid.Row="7" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
-            <Button Name="Dot" Grid.Row="7" Grid.Column="2" Click="Dot_Click">.</Button>
-            <Button Name="BackSpace" Grid.Column="0" Grid.Row="2" Click="BackSpace_Click">&lt;-</Button>
-            
-            <!--Memory-->
-            <Button Name="MPlus" Grid.Row="3" Click="MPlus_Click">M+</Button>
-            <Button Name="MMinus" Grid.Column="1" Grid.Row="3" Click="MMinus_Click">M-</Button>
-            <Button Name="MReset" Grid.Column="2" Grid.Row="3" Click="MReset_Click">Mrc</Button>
-
-            <!--Digits-->
-            <Button Grid.Column="0" Grid.Row="4" Name="Button1" Click="ButtonDigit_Click">1</Button>
-            <Button Grid.Column="1" Grid.Row="4" Name="Button2" Click="ButtonDigit_Click">2</Button>
-            <Button Grid.Column="2" Grid.Row="4" Name="Button3" Click="ButtonDigit_Click">3</Button>
-            <Button Grid.Column="0" Grid.Row="5" Name="Button4" Click="ButtonDigit_Click">4</Button>
-            <Button Grid.Column="1" Grid.Row="5" Name="Button5" Click="ButtonDigit_Click">5</Button>
-            <Button Grid.Column="2" Grid.Row="5" Name="Button6" Click="ButtonDigit_Click">6</Button>
-            <Button Grid.Column="0" Grid.Row="6" Name="Button7" Click="ButtonDigit_Click">7</Button>
-            <Button Grid.Column="1" Grid.Row="6" Name="Button8" Click="ButtonDigit_Click">8</Button>
-            <Button Grid.Column="2" Grid.Row="6" Name="Button9" Click="ButtonDigit_Click">9</Button>
-            <Button Grid.Column="1" Grid.Row="7" Name="Button0" Click="ButtonDigit_Click">0</Button>
-
-            <!--Actions-->
-            <!--To add the button correctly you need:
-            1) Modify the GetResult()
-            2) Add tag which contains ONLY its sign in GetResult()
-            3) Connect Action_Click(...) as EventHandler-->
-            <Button Grid.Column="3" Grid.Row="4" Name="ButtonPlus" Click="Action_Click"
-                    Tag="+">+</Button>
-            <Button Grid.Column="3" Grid.Row="5" Name="ButtonMinus" Click="Action_Click"
-                    Tag="-">-</Button>
-            <Button Grid.Column="3" Grid.Row="6" Name="ButtonMulti" Click="Action_Click"
-                    Tag="*">*</Button>
-            <Button Grid.Column="3" Grid.Row="7" Name="ButtonSub" Click="Action_Click"
-                    Tag="/">/</Button>
-            <Button Name="Equals" Grid.Row="3" Grid.Column="3" Click="Equals_Click">=</Button>
-            
-            <!--Clear-->
-            <Button Name="C" Grid.Row="2" Grid.Column="1" Click="C_Click"
-                    ToolTip="Clear All fields">C</Button>
-            <Button Name="CE" Grid.Row="2" Grid.Column="0" Click="CE_Click"
-                    ToolTip="Clear the operands field">CE</Button>
-            
+                   Grid.Row="0" Grid.Column="3">
+            </Label>
         </Grid>
+        
+        
+        <TabControl DockPanel.Dock="Bottom">
+            <TabItem Header="Standard">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--Auxiliary Buttons-->
+                    <Button Name="OppositeSign" Grid.Row="5" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
+                    <Button Name="Dot" Grid.Row="5" Grid.Column="2" Click="Dot_Click">.</Button>
+                    <Button Name="BackSpace" Grid.Column="0" Grid.Row="0" Click="BackSpace_Click">&lt;-</Button>
+
+                    <!--Memory-->
+                    <Button Name="MPlus" Grid.Row="1" Click="MPlus_Click">M+</Button>
+                    <Button Name="MMinus" Grid.Column="1" Grid.Row="1" Click="MMinus_Click">M-</Button>
+                    <Button Name="MReset" Grid.Column="2" Grid.Row="1" Click="MReset_Click">Mrc</Button>
+
+                    <!--Digits-->
+                    <Button Grid.Column="0" Grid.Row="2" Name="Button1" Click="ButtonDigit_Click">1</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Name="Button2" Click="ButtonDigit_Click">2</Button>
+                    <Button Grid.Column="2" Grid.Row="2" Name="Button3" Click="ButtonDigit_Click">3</Button>
+                    <Button Grid.Column="0" Grid.Row="3" Name="Button4" Click="ButtonDigit_Click">4</Button>
+                    <Button Grid.Column="1" Grid.Row="3" Name="Button5" Click="ButtonDigit_Click">5</Button>
+                    <Button Grid.Column="2" Grid.Row="3" Name="Button6" Click="ButtonDigit_Click">6</Button>
+                    <Button Grid.Column="0" Grid.Row="4" Name="Button7" Click="ButtonDigit_Click">7</Button>
+                    <Button Grid.Column="1" Grid.Row="4" Name="Button8" Click="ButtonDigit_Click">8</Button>
+                    <Button Grid.Column="2" Grid.Row="4" Name="Button9" Click="ButtonDigit_Click">9</Button>
+                    <Button Grid.Column="1" Grid.Row="5" Name="Button0" Click="ButtonDigit_Click">0</Button>
+
+                    <!--Actions-->
+                    <!--To add the button correctly you need:
+                        1) Modify the GetResult()
+                        2) Add tag which contains ONLY its sign in GetResult()
+                        3) Connect Action_Click(...) as EventHandler-->
+                    <Button Grid.Column="3" Grid.Row="2" Name="ButtonPlus" Click="Action_Click"
+                                Tag="+">+</Button>
+                    <Button Grid.Column="3" Grid.Row="3" Name="ButtonMinus" Click="Action_Click"
+                                Tag="-">-</Button>
+                    <Button Grid.Column="3" Grid.Row="4" Name="ButtonMulti" Click="Action_Click"
+                                Tag="*">*</Button>
+                    <Button Grid.Column="3" Grid.Row="5" Name="ButtonSub" Click="Action_Click"
+                                Tag="/">/</Button>
+                    <Button Name="Equals" Grid.Row="0" Grid.Column="3" Click="Equals_Click">=</Button>
+                    <Button Grid.Column="3" Grid.Row="1" Click="Action_Click"
+                                Tag="^">^</Button>
+
+                    <!--Clear-->
+                    <Button Name="C" Grid.Row="0" Grid.Column="2" Click="C_Click"
+                                ToolTip="Clear All fields">C</Button>
+                    <Button Name="CE" Grid.Row="0" Grid.Column="1" Click="CE_Click"
+                                ToolTip="Clear the operands field">CE</Button>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Advanced">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--To add the button correctly you need:
+                        1) Modify the GetResult()
+                        2) Add tag which contains ONLY its sign in GetResult()
+                        3) Connect Action_Click(...) as EventHandler-->
+                    <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Click="Action_Click">y√x</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        
     </DockPanel>
 </Window>
