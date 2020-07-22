@@ -6,10 +6,14 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
+    <Window.DataContext>
+        <local:VM/>
+    </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Actions">
-                <MenuItem Header="Exit" Click="Exit_Click"></MenuItem>
+                <MenuItem Header="Exit" Command="{Binding Exit_Click}"
+                          CommandParameter=""></MenuItem>
             </MenuItem>
             <MenuItem Header="Languages">
                 
@@ -29,11 +33,14 @@
                 <RowDefinition Height="25"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="3" Grid.Row="0"/>
-            <Label Grid.Row="1" Grid.ColumnSpan="4" Name="Field">0</Label>
+            <Label Name="Answer" Background="AliceBlue" Grid.ColumnSpan="3" Grid.Row="0"
+                   Content="{Binding Answer}"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="4" Name="Field"
+                   Content="{Binding Typed}"></Label>
             <Label Name="Sign" 
                    HorizontalContentAlignment="Center" 
-                   Grid.Row="0" Grid.Column="3">
+                   Grid.Row="0" Grid.Column="3"
+                   Content="{Binding Sign}">
             </Label>
         </Grid>
         

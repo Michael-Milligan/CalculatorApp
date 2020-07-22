@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
+    #region Legacy
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -31,10 +32,6 @@ namespace Calculator
         bool IsAfterDot;
 
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
         private void ButtonDigit_Click(object sender, RoutedEventArgs e)
         {
@@ -212,3 +209,4 @@ namespace Calculator
         }
     }
 }
+#endregion

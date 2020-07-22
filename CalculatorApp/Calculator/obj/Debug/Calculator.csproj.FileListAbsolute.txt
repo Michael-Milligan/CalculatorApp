@@ -27,6 +27,15 @@ D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculato
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.exe
 D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.pdb
-D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.g.cs
-D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Scientific.baml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\CommonServiceLocator.dll
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.dll
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.dll
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.ValueTuple.dll
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.Windows.Interactivity.dll
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.pdb
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.xml
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.pdb
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.xml
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.ValueTuple.xml
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.CopyComplete
