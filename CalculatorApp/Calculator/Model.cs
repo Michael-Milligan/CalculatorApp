@@ -245,7 +245,7 @@ namespace Calculator
                 case "y√x":
                     try
                     {
-                        return Math.Pow(FirstOperand, 1 / SecondOperand);
+                        return Math.Pow(SecondOperand, 1 / FirstOperand);
                     }
                     catch (Exception)
                     { GetError(); }
