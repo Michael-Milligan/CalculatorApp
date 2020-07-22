@@ -65,48 +65,48 @@
                     </Grid.RowDefinitions>
 
                     <!--Auxiliary Buttons-->
-                    <Button Name="OppositeSign" Grid.Row="5" Grid.Column="0" Click="OppositeSign_Click">+/-</Button>
-                    <Button Name="Dot" Grid.Row="5" Grid.Column="2" Click="Dot_Click">.</Button>
-                    <Button Name="BackSpace" Grid.Column="0" Grid.Row="0" Click="BackSpace_Click">&lt;-</Button>
+                    <Button Name="OppositeSign" Grid.Row="5" Grid.Column="0" Command="{Binding OppositeSign_Click}">+/-</Button>
+                    <Button Name="Dot" Grid.Row="5" Grid.Column="2" Command="{Binding Dot_Click}">.</Button>
+                    <Button Name="BackSpace" Grid.Column="0" Grid.Row="0" Command="{Binding Backspace_Click}">&lt;-</Button>
 
                     <!--Memory-->
-                    <Button Name="MPlus" Grid.Row="1" Click="MPlus_Click">M+</Button>
-                    <Button Name="MMinus" Grid.Column="1" Grid.Row="1" Click="MMinus_Click">M-</Button>
-                    <Button Name="MReset" Grid.Column="2" Grid.Row="1" Click="MReset_Click">Mrc</Button>
+                    <Button Name="MPlus" Grid.Row="1" Command="{Binding MPlus_Click}">M+</Button>
+                    <Button Name="MMinus" Grid.Column="1" Grid.Row="1" Command="{Binding MMinus_Click}">M-</Button>
+                    <Button Name="MReset" Grid.Column="2" Grid.Row="1" Command="{Binding MReset_Click}">Mrc</Button>
 
                     <!--Digits-->
-                    <Button Grid.Column="0" Grid.Row="2" Name="Button1" Click="ButtonDigit_Click">1</Button>
-                    <Button Grid.Column="1" Grid.Row="2" Name="Button2" Click="ButtonDigit_Click">2</Button>
-                    <Button Grid.Column="2" Grid.Row="2" Name="Button3" Click="ButtonDigit_Click">3</Button>
-                    <Button Grid.Column="0" Grid.Row="3" Name="Button4" Click="ButtonDigit_Click">4</Button>
-                    <Button Grid.Column="1" Grid.Row="3" Name="Button5" Click="ButtonDigit_Click">5</Button>
-                    <Button Grid.Column="2" Grid.Row="3" Name="Button6" Click="ButtonDigit_Click">6</Button>
-                    <Button Grid.Column="0" Grid.Row="4" Name="Button7" Click="ButtonDigit_Click">7</Button>
-                    <Button Grid.Column="1" Grid.Row="4" Name="Button8" Click="ButtonDigit_Click">8</Button>
-                    <Button Grid.Column="2" Grid.Row="4" Name="Button9" Click="ButtonDigit_Click">9</Button>
-                    <Button Grid.Column="1" Grid.Row="5" Name="Button0" Click="ButtonDigit_Click">0</Button>
+                    <Button Grid.Column="0" Grid.Row="2" Name="Button1" Command="{Binding Digit_Click}">1</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Name="Button2" Command="{Binding Digit_Click}">2</Button>
+                    <Button Grid.Column="2" Grid.Row="2" Name="Button3" Command="{Binding Digit_Click}">3</Button>
+                    <Button Grid.Column="0" Grid.Row="3" Name="Button4" Command="{Binding Digit_Click}">4</Button>
+                    <Button Grid.Column="1" Grid.Row="3" Name="Button5" Command="{Binding Digit_Click}">5</Button>
+                    <Button Grid.Column="2" Grid.Row="3" Name="Button6" Command="{Binding Digit_Click}">6</Button>
+                    <Button Grid.Column="0" Grid.Row="4" Name="Button7" Command="{Binding Digit_Click}">7</Button>
+                    <Button Grid.Column="1" Grid.Row="4" Name="Button8" Command="{Binding Digit_Click}">8</Button>
+                    <Button Grid.Column="2" Grid.Row="4" Name="Button9" Command="{Binding Digit_Click}">9</Button>
+                    <Button Grid.Column="1" Grid.Row="5" Name="Button0" Command="{Binding Digit_Click}">0</Button>
 
                     <!--Actions-->
                     <!--To add the button correctly you need:
                         1) Modify the GetResult()
                         2) Add tag which contains ONLY its sign in GetResult()
                         3) Connect Action_Click(...) as EventHandler-->
-                    <Button Grid.Column="3" Grid.Row="2" Name="ButtonPlus" Click="Action_Click"
+                    <Button Grid.Column="3" Grid.Row="2" Name="ButtonPlus" Command="{Binding Action_Click}"
                                 Tag="+">+</Button>
-                    <Button Grid.Column="3" Grid.Row="3" Name="ButtonMinus" Click="Action_Click"
+                    <Button Grid.Column="3" Grid.Row="3" Name="ButtonMinus" Command="{Binding Action_Click}"
                                 Tag="-">-</Button>
-                    <Button Grid.Column="3" Grid.Row="4" Name="ButtonMulti" Click="Action_Click"
+                    <Button Grid.Column="3" Grid.Row="4" Name="ButtonMulti" Command="{Binding Action_Click}"
                                 Tag="*">*</Button>
-                    <Button Grid.Column="3" Grid.Row="5" Name="ButtonSub" Click="Action_Click"
+                    <Button Grid.Column="3" Grid.Row="5" Name="ButtonSub" Command="{Binding Action_Click}"
                                 Tag="/">/</Button>
-                    <Button Name="Equals" Grid.Row="0" Grid.Column="3" Click="Equals_Click">=</Button>
-                    <Button Grid.Column="3" Grid.Row="1" Click="Action_Click"
+                    <Button Name="Equals" Grid.Row="0" Grid.Column="3" Command="{Binding Equals_Click}">=</Button>
+                    <Button Grid.Column="3" Grid.Row="1" Command="{Binding Action_Click}"
                                 Tag="^">^</Button>
 
                     <!--Clear-->
-                    <Button Name="C" Grid.Row="0" Grid.Column="2" Click="C_Click"
+                    <Button Name="C" Grid.Row="0" Grid.Column="2" Command="{Binding C_Click}"
                                 ToolTip="Clear All fields">C</Button>
-                    <Button Name="CE" Grid.Row="0" Grid.Column="1" Click="CE_Click"
+                    <Button Name="CE" Grid.Row="0" Grid.Column="1" Command="{Binding CE_Click}"
                                 ToolTip="Clear the operands field">CE</Button>
 
                 </Grid>
@@ -123,7 +123,7 @@
                         1) Modify the GetResult()
                         2) Add tag which contains ONLY its sign in GetResult()
                         3) Connect Action_Click(...) as EventHandler--> 
-                    <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Click="Action_Click">y√x</Button>
+                    <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Command="{Binding Action_Click}">y√x</Button>
                 </Grid>
             </TabItem>
         </TabControl>
