@@ -26,9 +26,9 @@ namespace Calculator
         public DelegateCommand Backspace_Click { get; }
         public DelegateCommand Dot_Click { get; }
 
-        public DelegateCommand Digit_Click { get; }
+        public DelegateCommand<object> Digit_Click { get; }
 
-        public DelegateCommand Action_Click { get; }
+        public DelegateCommand<object> Action_Click { get; }
 
         public DelegateCommand MPlus_Click { get; }
         public DelegateCommand MMinus_Click { get; }
@@ -70,14 +70,14 @@ namespace Calculator
             });
 
 
-            Digit_Click = new DelegateCommand(() =>
+            Digit_Click = new DelegateCommand<object>(sender =>
             {
-                Model.Digit_Click(1, new RoutedEventArgs());
+                Model.Digit_Click(sender, new RoutedEventArgs());
             });
 
-            Action_Click = new DelegateCommand(() =>
+            Action_Click = new DelegateCommand<object>(sender =>
             {
-                Model.Action_Click(1, new RoutedEventArgs());
+                Model.Action_Click(sender, new RoutedEventArgs());
             });
 
             MPlus_Click = new DelegateCommand(() =>

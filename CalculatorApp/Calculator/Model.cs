@@ -23,7 +23,9 @@ namespace Calculator
         public double? AnswerProperty { 
             get
             {
-                return Answer.Value;
+                if (Answer.HasValue)
+                    return Answer.Value;
+                else return null;
             }
             set
             {

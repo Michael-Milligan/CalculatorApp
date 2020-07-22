@@ -75,32 +75,50 @@
                     <Button Name="MReset" Grid.Column="2" Grid.Row="1" Command="{Binding MReset_Click}">Mrc</Button>
 
                     <!--Digits-->
-                    <Button Grid.Column="0" Grid.Row="2" Name="Button1" Command="{Binding Digit_Click}">1</Button>
-                    <Button Grid.Column="1" Grid.Row="2" Name="Button2" Command="{Binding Digit_Click}">2</Button>
-                    <Button Grid.Column="2" Grid.Row="2" Name="Button3" Command="{Binding Digit_Click}">3</Button>
-                    <Button Grid.Column="0" Grid.Row="3" Name="Button4" Command="{Binding Digit_Click}">4</Button>
-                    <Button Grid.Column="1" Grid.Row="3" Name="Button5" Command="{Binding Digit_Click}">5</Button>
-                    <Button Grid.Column="2" Grid.Row="3" Name="Button6" Command="{Binding Digit_Click}">6</Button>
-                    <Button Grid.Column="0" Grid.Row="4" Name="Button7" Command="{Binding Digit_Click}">7</Button>
-                    <Button Grid.Column="1" Grid.Row="4" Name="Button8" Command="{Binding Digit_Click}">8</Button>
-                    <Button Grid.Column="2" Grid.Row="4" Name="Button9" Command="{Binding Digit_Click}">9</Button>
-                    <Button Grid.Column="1" Grid.Row="5" Name="Button0" Command="{Binding Digit_Click}">0</Button>
+                    <Button Grid.Column="0" Grid.Row="2" Name="Button1" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button1}">1</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Name="Button2" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button2}">2</Button>
+                    <Button Grid.Column="2" Grid.Row="2" Name="Button3" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button3}">3</Button>
+                    <Button Grid.Column="0" Grid.Row="3" Name="Button4" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button4}">4</Button>
+                    <Button Grid.Column="1" Grid.Row="3" Name="Button5" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button5}">5</Button>
+                    <Button Grid.Column="2" Grid.Row="3" Name="Button6" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button6}">6</Button>
+                    <Button Grid.Column="0" Grid.Row="4" Name="Button7" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button7}">7</Button>
+                    <Button Grid.Column="1" Grid.Row="4" Name="Button8" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button8}">8</Button>
+                    <Button Grid.Column="2" Grid.Row="4" Name="Button9" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button9}">9</Button>
+                    <Button Grid.Column="1" Grid.Row="5" Name="Button0" Command="{Binding Digit_Click}"
+                            CommandParameter="{Binding ElementName=Button0}">0</Button>
 
                     <!--Actions-->
                     <!--To add the button correctly you need:
                         1) Modify the GetResult()
                         2) Add tag which contains ONLY its sign in GetResult()
-                        3) Connect Action_Click(...) as EventHandler-->
-                    <Button Grid.Column="3" Grid.Row="2" Name="ButtonPlus" Command="{Binding Action_Click}"
+                        3) Connect Action_Click(...) as Command
+                        4) Make the DelegateCommand for this
+                        5) Add CommanderParameter
+                    -->
+                    <Button Grid.Column="3" Grid.Row="2" Name="ButtonPlus" 
+                            Command="{Binding Action_Click}" CommandParameter="{Binding ElementName=ButtonPlus}"
                                 Tag="+">+</Button>
-                    <Button Grid.Column="3" Grid.Row="3" Name="ButtonMinus" Command="{Binding Action_Click}"
+                    <Button Grid.Column="3" Grid.Row="3" Name="ButtonMinus" 
+                            Command="{Binding Action_Click}" CommandParameter="{Binding ElementName=ButtonMinus}"
                                 Tag="-">-</Button>
-                    <Button Grid.Column="3" Grid.Row="4" Name="ButtonMulti" Command="{Binding Action_Click}"
+                    <Button Grid.Column="3" Grid.Row="4" Name="ButtonMulti" 
+                            Command="{Binding Action_Click}" CommandParameter="{Binding ElementName=ButtonMulti}"
                                 Tag="*">*</Button>
-                    <Button Grid.Column="3" Grid.Row="5" Name="ButtonSub" Command="{Binding Action_Click}"
+                    <Button Grid.Column="3" Grid.Row="5" Name="ButtonSub" 
+                            Command="{Binding Action_Click}" CommandParameter="{Binding ElementName=ButtonSub}"
                                 Tag="/">/</Button>
                     <Button Name="Equals" Grid.Row="0" Grid.Column="3" Command="{Binding Equals_Click}">=</Button>
-                    <Button Grid.Column="3" Grid.Row="1" Command="{Binding Action_Click}"
+                    <Button Grid.Column="3" Grid.Row="1" Name="ButtonDegree"
+                            Command="{Binding Action_Click}" CommandParameter="{Binding ElementName=ButtonDegree}"
                                 Tag="^">^</Button>
 
                     <!--Clear-->
@@ -123,7 +141,8 @@
                         1) Modify the GetResult()
                         2) Add tag which contains ONLY its sign in GetResult()
                         3) Connect Action_Click(...) as EventHandler--> 
-                    <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Command="{Binding Action_Click}">y√x</Button>
+                    <Button Grid.Column="0" Grid.Row="0" Tag="y√x" Command="{Binding Action_Click}"
+                            Name="Root" CommandParameter="{Binding ElementName=Root}">y√x</Button>
                 </Grid>
             </TabItem>
         </TabControl>
