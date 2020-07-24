@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -252,6 +253,34 @@ namespace Calculator
                     break;
             }
             return 0;
+        }
+
+        public void LanguageChanged(object sender, EventArgs e)
+        {
+            var Window = Application.Current.Windows[0] as MainWindow;
+            CultureInfo CurrentLang = App.Language;
+
+            //Отмечаем нужный пункт смены языка как выбранный язык
+            foreach (MenuItem i in Window.Menu.Items)
+            {
+                CultureInfo CultureInfoItem = i.Tag as CultureInfo;
+                i.IsChecked = CultureInfoItem != null && CultureInfoItem.Equals(CurrentLang);
+            }
+        }
+
+        public void ChangeLanguageClick(object sender, EventArgs e)
+        {
+            MenuItem CurrentMenuItem = sender as MenuItem;
+            if (CurrentMenuItem != null)
+            {
+                string langName = (string)CurrentMenuItem.Tag;
+                CultureInfo lang = App.Languages.Where(item => item.Name == langName).ToList()[0];
+                if (lang != null)
+                {
+                    App.Language = lang;
+                }
+                LanguageChanged(1, new EventArgs());
+            }
         }
         #endregion
     }

@@ -36,6 +36,9 @@ namespace Calculator
 
         public DelegateCommand Equals_Click { get; }
 
+        public DelegateCommand<object> Language_Click { get; }
+
+
 
         public VM()
         {
@@ -96,6 +99,11 @@ namespace Calculator
             Equals_Click = new DelegateCommand(() =>
             {
                 Model.Equals_Click(1, new RoutedEventArgs());
+            });
+
+            Language_Click = new DelegateCommand<object>((sender) =>
+            {
+                Model.ChangeLanguageClick(sender, new RoutedEventArgs());
             });
         }
     }

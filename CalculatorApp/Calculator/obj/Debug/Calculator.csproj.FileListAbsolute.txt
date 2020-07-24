@@ -39,3 +39,6 @@ D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.pdb
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.xml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.ValueTuple.xml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.CopyComplete
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.ru-RU.baml
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.baml
+D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\App.baml

@@ -5,18 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         Title="MainWindow" Height="300" Width="300">
     <Window.DataContext>
         <local:VM/>
     </Window.DataContext>
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Actions">
-                <MenuItem Header="Exit" Command="{Binding Exit_Click}"
+        <Menu DockPanel.Dock="Top" Name="Menu">
+            <MenuItem Header="{DynamicResource Menu-Actions}">
+                <MenuItem Header="{DynamicResource Menu-Exit}" Command="{Binding Exit_Click}"
                           CommandParameter=""></MenuItem>
             </MenuItem>
-            <MenuItem Header="Languages">
-                
+            <MenuItem Header="{DynamicResource Menu-Languages}">
+                <MenuItem Header="{DynamicResource Languages-EN}" Name="EN" Tag="en-US"
+                          Command="{Binding Language_Click}" CommandParameter="{Binding ElementName=EN}"></MenuItem>
+                <MenuItem Header="{DynamicResource Languages-RU}" Name="RU" Tag="ru-RU"
+                          Command="{Binding Language_Click}" CommandParameter="{Binding ElementName=RU}"></MenuItem>
             </MenuItem>
         </Menu>
         <Grid DockPanel.Dock="Top">
@@ -46,7 +50,7 @@
         
         
         <TabControl DockPanel.Dock="Bottom">
-            <TabItem Header="Standard">
+            <TabItem Header="{DynamicResource Tab-Standard}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -123,13 +127,13 @@
 
                     <!--Clear-->
                     <Button Name="C" Grid.Row="0" Grid.Column="2" Command="{Binding C_Click}"
-                                ToolTip="Clear All fields">C</Button>
+                                ToolTip="{DynamicResource Tooltip-C}">C</Button>
                     <Button Name="CE" Grid.Row="0" Grid.Column="1" Command="{Binding CE_Click}"
-                                ToolTip="Clear the operands field">CE</Button>
+                                ToolTip="{DynamicResource Tooltip-CE}">CE</Button>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Advanced">
+            <TabItem Header="{DynamicResource Tab-Advanced}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
