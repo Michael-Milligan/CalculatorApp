@@ -255,18 +255,6 @@ namespace Calculator
             return 0;
         }
 
-        public void LanguageChanged(object sender, EventArgs e)
-        {
-            var Window = Application.Current.Windows[0] as MainWindow;
-            CultureInfo CurrentLang = App.Language;
-
-            //Отмечаем нужный пункт смены языка как выбранный язык
-            foreach (MenuItem i in Window.Menu.Items)
-            {
-                CultureInfo CultureInfoItem = i.Tag as CultureInfo;
-                i.IsChecked = CultureInfoItem != null && CultureInfoItem.Equals(CurrentLang);
-            }
-        }
 
         public void ChangeLanguageClick(object sender, EventArgs e)
         {
@@ -279,8 +267,14 @@ namespace Calculator
                 {
                     App.Language = lang;
                 }
-                LanguageChanged(1, new EventArgs());
+                App_LanguageChanged();
             }
+        }
+
+        public void App_LanguageChanged()
+        {
+            Properties.Settings.Default.DefaultLanguage = App.Language;
+            Properties.Settings.Default.Save();
         }
         #endregion
     }

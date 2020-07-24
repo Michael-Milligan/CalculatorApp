@@ -14,8 +14,6 @@ namespace Calculator
     /// </summary>
     public partial class App : Application
     {
-		public static event EventHandler LanguageChanged;
-
 		public static List<CultureInfo> Languages { get; } = new List<CultureInfo>();
 
         public App()
@@ -23,6 +21,7 @@ namespace Calculator
 			Languages.Clear();
 			Languages.Add(new CultureInfo("en-US"));
 			Languages.Add(new CultureInfo("ru-RU"));
+			Language = Calculator.Properties.Settings.Default.DefaultLanguage;
 		}
 
         public static CultureInfo Language { 
@@ -50,7 +49,7 @@ namespace Calculator
 
 				ResourceDictionary oldDict = (from d in Application.Current.Resources.MergedDictionaries
 											  where d.Source != null && d.Source.OriginalString.StartsWith("Resources/lang.")
-											  select d).First();
+											  select d).FirstOrDefault();
 				if (oldDict != null)
 				{
 					int ind = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
@@ -61,8 +60,7 @@ namespace Calculator
 				{
 					Application.Current.Resources.MergedDictionaries.Add(dict);
 				}
-
-				new Model().LanguageChanged(Application.Current, new EventArgs());
+				new Model().App_LanguageChanged();
 			}
 		}
 	}

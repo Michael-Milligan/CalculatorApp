@@ -24,7 +24,6 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
-            App.LanguageChanged += new Model().LanguageChanged;
         }
     }
     #endregion
