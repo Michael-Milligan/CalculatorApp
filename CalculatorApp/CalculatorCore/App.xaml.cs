@@ -44,10 +44,8 @@ namespace Calculator
 				switch (value.Name)
 				{
 					case "ru-RU":
-						dict.Source = new Uri(("Resources/lang.ru-RU.xaml"), UriKind.Relative);
-						break;
 					case "en-US":
-						dict.Source = new Uri(("Resources/lang.en-US.xaml"), UriKind.Relative);
+						dict.Source = new Uri(($"Resources/lang.{value.Name}.xaml"), UriKind.Relative);
 						break;
 					default:
 						dict.Source = new Uri($"Resources/lang.{File.ReadAllText(Model.Path)}.xaml", 
