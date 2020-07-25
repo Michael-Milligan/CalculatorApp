@@ -24,7 +24,7 @@ namespace Calculator
 
         public DelegateCommand OppositeSign_Click { get; }
         public DelegateCommand Backspace_Click { get; }
-        public DelegateCommand Dot_Click { get; }
+        public DelegateCommand Comma_Click { get; }
 
         public DelegateCommand<object> Digit_Click { get; }
 
@@ -64,9 +64,9 @@ namespace Calculator
             {
                 Model.Backspace_Click(1, new RoutedEventArgs());
             });
-            Dot_Click = new DelegateCommand(() =>
+            Comma_Click = new DelegateCommand(() =>
             {
-                Model.Dot_Click(1, new RoutedEventArgs());
+                Model.Comma_Click(1, new RoutedEventArgs());
             });
             OppositeSign_Click = new DelegateCommand(() =>
             {

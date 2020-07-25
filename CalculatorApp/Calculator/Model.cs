@@ -20,7 +20,7 @@ namespace Calculator
         bool IsError;
         double Memory;
         int ZeroCount = 1;
-        bool IsAfterDot;
+        bool IsAfterComma;
 
         public double? AnswerProperty { 
             get
@@ -103,9 +103,12 @@ namespace Calculator
             }
             Window.Field.Content = Convert.ToString(Result);
         }
-        public void Dot_Click(object sender, RoutedEventArgs e)
+        public void Comma_Click(object sender, RoutedEventArgs e)
         {
-            IsAfterDot = true;
+            MainWindow Window = Application.Current.Windows[0] as MainWindow;
+            IsAfterComma = true;
+            Window.Field.Content = Convert.ToString(Window.Field.Content) + ",";
+
         }
 
         public void C_Click(object sender, RoutedEventArgs e)
@@ -114,10 +117,14 @@ namespace Calculator
             Window.Field.Content = 0;
             Window.Answer.Content = null;
             Window.Sign.Content = null;
+            IsAfterComma = false;
+            ZeroCount = 1;
         }
         public void CE_Click(object sender, RoutedEventArgs e)
         {
             var Window = Application.Current.Windows[0] as MainWindow;
+            IsAfterComma = false;
+            ZeroCount = 1;
             Window.Field.Content = 0;
         }
 
@@ -154,7 +161,7 @@ namespace Calculator
                 return;
             }
 
-            if (!IsAfterDot)
+            if (!IsAfterComma)
             {
                 Window.Field.Content = Convert.ToDouble(Window.Field.Content) * 10 +
                         (button.Name[6] - '0');
@@ -202,7 +209,7 @@ namespace Calculator
             var Window = Application.Current.Windows[0] as MainWindow;
             Button button = sender as Button;
             Window.Sign.Content = button.Tag;
-            Window.Answer.Content = GetResultOneParameter(Convert.ToInt32(Window.Field.Content));
+            Window.Answer.Content = GetResultOneParameter(Convert.ToDouble(Window.Field.Content));
             Window.Sign.Content = null;
             Window.Field.Content = 0;
             
@@ -274,13 +281,22 @@ namespace Calculator
             return 0;
         }
 
-        public double GetResultOneParameter(int Parameter)
+        public double GetResultOneParameter(double Parameter)
         {
             var Window = Application.Current.Windows[0] as MainWindow;
             switch (Convert.ToString(Window.Sign.Content))
             {
                 case "!":
                     return Factorial(Parameter);
+                case "√":
+                    return Math.Sqrt(Parameter);
+                case "3√":
+                    return Math.Pow(Parameter, 1 / 3);
+
+                case "lg":
+                    return Math.Log10(Parameter);
+                case "ln":
+                    return Math.Log(Parameter);
                 default:
                     return 0;
             }
