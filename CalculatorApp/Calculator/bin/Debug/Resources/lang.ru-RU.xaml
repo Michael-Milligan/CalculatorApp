@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="Title">Калькулятор</sys:String>
+    <sys:String x:Key="Menu-Actions">Действия</sys:String>
+    <sys:String x:Key="Menu-Exit">Выйти</sys:String>
+    <sys:String x:Key="Menu-Languages">Настройка языка</sys:String>
+    <sys:String x:Key="Languages-EN">Английский</sys:String>
+    <sys:String x:Key="Languages-RU">Русский</sys:String>
+    <sys:String x:Key="Tooltip-C">Очищает все поля</sys:String>
+    <sys:String x:Key="Tooltip-CE">Очищает поле ввода</sys:String>
+    <sys:String x:Key="Tab-Standard">Стандартные функции</sys:String>
+    <sys:String x:Key="Tab-Advanced">Сложные функции</sys:String>
+
+</ResourceDictionary>

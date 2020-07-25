@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="Title">Calculator</sys:String>
+    <sys:String x:Key="Menu-Actions">Actions</sys:String>
+    <sys:String x:Key="Menu-Exit">Exit</sys:String>
+    <sys:String x:Key="Menu-Languages">Languages</sys:String>
+    <sys:String x:Key="Languages-EN">English</sys:String>
+    <sys:String x:Key="Languages-RU">Russian</sys:String>
+    <sys:String x:Key="Tooltip-C">Clear All fields</sys:String>
+    <sys:String x:Key="Tooltip-CE">Clear the field for typing</sys:String>
+    <sys:String x:Key="Tab-Standard">Standard functions</sys:String>
+    <sys:String x:Key="Tab-Advanced">Advanced functions</sys:String>
+</ResourceDictionary>

@@ -42,3 +42,17 @@ D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.Cop
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.ru-RU.baml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.baml
 D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\App.baml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\CommonServiceLocator.dll
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.dll
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.dll
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.ValueTuple.dll
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.Windows.Interactivity.dll
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.pdb
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.xml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.pdb
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\Prism.Wpf.xml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\bin\Debug\System.ValueTuple.xml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.ru-RU.baml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Resources\lang.en-US.baml
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\Calculator.csproj.CopyComplete

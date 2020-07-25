@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-D:\GitHub\CalculatorApp\CalculatorApp\Calculator\obj\Debug\
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\obj\Debug\
 Calculator
 none
 false
 DEBUG;TRACE
-D:\GitHub\CalculatorApp\CalculatorApp\Calculator\App.xaml
-31282776962
+D:\GitHub\Fitness App\CalculatorApp\CalculatorApp\Calculator\App.xaml
+31320814479
 
-8-1809609359
-191525694984
-MainWindow.xaml;Resources\lang.ru-RU.xaml;Resources\lang.xaml;
+8-638976641
+19-607461965
+MainWindow.xaml;Resources\lang.ru-RU.xaml;Resources\lang.en-US.xaml;
 
 True
 
