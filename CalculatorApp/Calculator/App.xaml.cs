@@ -46,22 +46,23 @@ namespace Calculator
 						dict.Source = new Uri(("Resources/lang.en-US.xaml"), UriKind.Relative);
 						break;
 					default:
-						dict.Source = new Uri($"Resources/lang.{Calculator.Properties.Settings.Default.DefaultLanguage}.xaml", UriKind.Relative);
+						dict.Source = new Uri($"Resources/lang.{Calculator.Properties.Settings.Default.DefaultLanguage}.xaml", 
+							UriKind.Relative);
 						break;
 				}
 
-				ResourceDictionary oldDict = (from d in Application.Current.Resources.MergedDictionaries
+				ResourceDictionary oldDict = (from d in Current.Resources.MergedDictionaries
 											  where d.Source != null && d.Source.OriginalString.StartsWith("Resources/lang.")
 											  select d).FirstOrDefault();
 				if (oldDict != null)
 				{
-					int Index = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
-					Application.Current.Resources.MergedDictionaries.Remove(oldDict);
-					Application.Current.Resources.MergedDictionaries.Insert(Index, dict);
+					int Index = Current.Resources.MergedDictionaries.IndexOf(oldDict);
+					Current.Resources.MergedDictionaries.Remove(oldDict);
+					Current.Resources.MergedDictionaries.Insert(Index, dict);
 				}
 				else
 				{
-					Application.Current.Resources.MergedDictionaries.Add(dict);
+					Current.Resources.MergedDictionaries.Add(dict);
 				}
 				new Model().App_LanguageChanged();
 			}

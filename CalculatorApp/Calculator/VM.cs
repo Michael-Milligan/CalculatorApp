@@ -29,6 +29,7 @@ namespace Calculator
         public DelegateCommand<object> Digit_Click { get; }
 
         public DelegateCommand<object> Action_Click { get; }
+        public DelegateCommand<object> ActionOneParameter_Click { get; }
 
         public DelegateCommand MPlus_Click { get; }
         public DelegateCommand MMinus_Click { get; }
@@ -104,6 +105,10 @@ namespace Calculator
             Language_Click = new DelegateCommand<object>((sender) =>
             {
                 Model.ChangeLanguageClick(sender, new RoutedEventArgs());
+            });
+            ActionOneParameter_Click = new DelegateCommand<object>((sender) =>
+            {
+                Model.ActionOneParameter_Click(sender, new RoutedEventArgs());
             });
         }
     }

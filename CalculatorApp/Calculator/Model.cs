@@ -74,7 +74,7 @@ namespace Calculator
             {
                 Window.Field.Content = Convert.ToDouble(Window.Field.Content) * (-1);
             }
-            catch (Exception)
+            catch (OverflowException)
             {
                 ErrorHandling();
             }
@@ -167,7 +167,7 @@ namespace Calculator
                     Window.Field.Content = Math.Round(Convert.ToDouble(Window.Field.Content) +
                             (button.Name[6] - '0') * Math.Pow(0.1, ZeroCount++), ZeroCount);
                 }
-                catch (Exception)
+                catch (OverflowException)
                 {
                     GetError();
                 }
@@ -197,6 +197,16 @@ namespace Calculator
             }
         }
 
+        public void ActionOneParameter_Click(object sender, RoutedEventArgs e)
+        {
+            var Window = Application.Current.Windows[0] as MainWindow;
+            Button button = sender as Button;
+            Window.Sign.Content = button.Tag;
+            Window.Answer.Content = GetResultOneParameter(Convert.ToInt32(Window.Field.Content));
+            Window.Sign.Content = null;
+            Window.Field.Content = 0;
+            
+        }
 
         #region Memory
         public void MPlus_Click(object sender, RoutedEventArgs e)
@@ -249,18 +259,49 @@ namespace Calculator
                     {
                         return Math.Pow(SecondOperand, 1 / FirstOperand);
                     }
-                    catch (Exception)
+                    catch (OverflowException)
+                    { GetError(); }
+                    break;
+                case "log b a":
+                    try
+                    {
+                        return Math.Log(FirstOperand, SecondOperand);
+                    }
+                    catch (OverflowException)
                     { GetError(); }
                     break;
             }
             return 0;
         }
 
+        public double GetResultOneParameter(int Parameter)
+        {
+            var Window = Application.Current.Windows[0] as MainWindow;
+            switch (Convert.ToString(Window.Sign.Content))
+            {
+                case "!":
+                    return Factorial(Parameter);
+                default:
+                    return 0;
+            }
+        }
+
+        public double Factorial(double Number)
+        {
+            List<double> list = new List<double>();
+            for (int i = 1; i <= Number; i++)
+            {
+                list.Add(i);
+            }
+            return list.Aggregate((FirstParameter, SecondParameter) =>
+            {
+                return FirstParameter * SecondParameter;
+            });
+        }
 
         public void ChangeLanguageClick(object sender, EventArgs e)
         {
-            MenuItem CurrentMenuItem = sender as MenuItem;
-            if (CurrentMenuItem != null)
+            if (sender is MenuItem CurrentMenuItem)
             {
                 string langName = (string)CurrentMenuItem.Tag;
                 CultureInfo lang = App.Languages.Where(item => item.Name == langName).ToList()[0];
